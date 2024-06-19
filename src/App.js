@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Dashboard from "./components/Dashboard"
 import CreatePost from './components/CreatePost';
 import UpdatePost from './components/UpdatePost';
+import Logout from "./components/Logout"
 import { AuthProvider } from './components/AuthContext';
 
 import { useEffect } from 'react';
@@ -36,6 +37,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/logout' element={<Logout />} />
           <Route path="/dash" element={<Dashboard />} />
           <Route path="/createpost" element={<CreatePost />} />
           <Route path="/updatepost" element={<UpdatePost />} />
