@@ -1,11 +1,14 @@
 import React from 'react'
 import { GoogleLoginButton, GoogleLogoutButton } from './GoogleAuth';
+import { useAuth } from './AuthContext';
 
 
 function Login() {
+  const { login } = useAuth();
 
   const onSuccess = (res) => {
     console.log("Login Success! Current User: ", res.profileObj);
+    login();
   }
 
   const onFailure = (res) => {
