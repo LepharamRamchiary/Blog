@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 function PostDetails() {
@@ -14,13 +14,52 @@ function PostDetails() {
         "Project Management": "Project management is the discipline of planning, executing, and overseeing projects to achieve specific goals within constraints such as time, budget, and resources. It involves defining project objectives, creating detailed plans, allocating tasks, and managing team members. Effective project management ensures that projects are completed on time and within budget while meeting quality standards. Key methodologies include Agile, Scrum, and Waterfall, each suited to different project types and industries. Project managers use tools like Gantt charts, project management software, and risk assessment techniques to track progress and address challenges. Successful project management leads to efficient workflow, clear communication, and project success."
     };
 
+    const [comments, setComments] = useState([
+
+    ]);
+
+    const [newComment, setNewComment] = useState('');
+
+    const handleAddComment = (e) => {
+        e.preventDefault();
+
+        const newId = comments.length + 1;
+
+        setComments([
+            ...comments,
+            { id: newId, text: newComment, author: "Anonymous" } // For simplicity, author is hardcoded
+        ]);
+
+        setNewComment('');
+    };
+
     return (
-        <div className='min-h-screen w-full bg-gray-700 '>
-            <div className='max-w-xl mx-auto p-6'>
+        < div className='min-h-screen w-full bg-gray-700 '>
+            < div className='max-w-xl mx-auto p-6' >
                 <h2 className='text-2xl font-semibold mb-4 text-center text-white'>{decodedTitle}</h2>
                 <p className='text-white'>{postContent[decodedTitle]}</p>
+            </ div>
+            <div className='max-w-xl mx-auto p-6'>
+                {comments.map(comment => (
+                    <div key={comment.id} className="mb-2">
+                        <p className="text-gray-300"><strong>{comment.author}:</strong> {comment.text}</p>
+                    </div>
+                ))}
+
+                <form onSubmit={handleAddComment}>
+                    <textarea
+                        rows="3"
+                        className="w-full p-2 bg-gray-800 text-gray-100 rounded"
+                        placeholder="Add your comment..."
+                        value={newComment}
+                        onChange={(e) => setNewComment(e.target.value)}
+                        required
+                    ></textarea>
+                    <button type="submit" className="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Post Comment</button>
+                </form>
             </div>
-        </div>
+
+        </div >
     );
 }
 
