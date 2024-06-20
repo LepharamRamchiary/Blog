@@ -1,53 +1,17 @@
-import React from 'react'
+import React from 'react';
+import Card from './Card';
 
 function Home() {
   return (
     <div className='w-full bg-gray-600 min-h-screen'>
       <div className='flex max-w-3xl gap-4 flex-wrap mx-auto justify-center'>
-        <div className='flex flex-col border border-gray-500 p-6 mt-5'>
-          <div className='flex items-center text-lg font-semibold gap-3 text-gray-950'>
-            <h1>Title: </h1>
-            <p>Web development</p>
-          </div>
-          <div className='flex items-center gap-3 text-gray-50 '>
-            <h1>Content: </h1>
-            <p>Any thing</p>
-          </div>
-        </div>
-        <div className='flex flex-col border border-gray-500 p-6 mt-5'>
-          <div className='flex items-center text-lg font-semibold gap-3 text-gray-950'>
-            <h1>Title: </h1>
-            <p>Web development</p>
-          </div>
-          <div className='flex items-center gap-3 text-gray-50 '>
-            <h1>Content: </h1>
-            <p>Any thing</p>
-          </div>
-        </div>
-        <div className='flex flex-col border border-gray-500 p-6 mt-5'>
-          <div className='flex items-center text-lg font-semibold gap-3 text-gray-950'>
-            <h1>Title: </h1>
-            <p>Web development</p>
-          </div>
-          <div className='flex items-center gap-3 text-gray-50 '>
-            <h1>Content: </h1>
-            <p>Any thing</p>
-          </div>
-        </div>
-        <div className='flex flex-col border border-gray-500 p-6 mt-5'>
-          <div className='flex items-center text-lg font-semibold gap-3 text-gray-950'>
-            <h1>Title: </h1>
-            <p>Web development</p>
-          </div>
-          <div className='flex items-center gap-3 text-gray-50 '>
-            <h1>Content: </h1>
-            <p>Any thing</p>
-          </div>
-        </div>
+      <Card title="Web development" content="About web dev" />
+        <Card title="App development" content="About App dev"/>
+        <Card title="UI/UX Design" content="Design matters"/>
+        <Card title="Project Management" content="Manage projects effectively"/>
       </div>
     </div>
-
-  )
+  );
 }
 
-export default Home
+export default Home;

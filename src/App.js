@@ -11,6 +11,7 @@ import { AuthProvider } from './components/AuthContext';
 
 import { useEffect } from 'react';
 import { gapi } from 'gapi-script';
+import PostDetails from './components/PostDetails';
 
 const clientId = process.env.REACT_APP_GOOGLE_CLIENT_ID;
 
@@ -41,6 +42,7 @@ function App() {
           <Route path="/dash" element={<Dashboard />} />
           <Route path="/createpost" element={<CreatePost />} />
           <Route path="/updatepost" element={<UpdatePost />} />
+          <Route path="/postdetails/:title" element={<PostDetails />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
