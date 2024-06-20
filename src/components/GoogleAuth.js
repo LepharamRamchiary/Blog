@@ -1,7 +1,8 @@
 import React from 'react';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 
-const clientId = process.env.REACT_APP_GOOGLE_CLIENT_ID;
+// const clientId = process.env.REACT_APP_GOOGLE_CLIENT_ID;
+const clientId = "393050996180-qie6tod23it1n3jqbajiitkp11670s69.apps.googleusercontent.com";
 
 export function GoogleLoginButton({ onSuccess, onFailure }) {
   return (

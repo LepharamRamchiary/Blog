@@ -13,7 +13,8 @@ import { useEffect } from 'react';
 import { gapi } from 'gapi-script';
 import PostDetails from './components/PostDetails';
 
-const clientId = process.env.REACT_APP_GOOGLE_CLIENT_ID;
+// const clientId = process.env.REACT_APP_GOOGLE_CLIENT_ID;
+const clientId = "393050996180-qie6tod23it1n3jqbajiitkp11670s69.apps.googleusercontent.com";
 
 function App() {
 
